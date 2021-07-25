@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Fuggles&display=swap');
+
+
+
+
+body{
+    background-image: url("https://i.gifer.com/Vr6.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+h1{
+    color: #fff;
+    /* font-family: 'Alfa Slab One', cursive; */
+    letter-spacing: 2px;
+    padding: 2em;
+}
+
+
+@media (max-width: 768px) {
+
+    h1{
+        color: #fff;
+        padding: 1em;
+        max-width: 90%;
+        gap: 20px;
+    }
+  }
