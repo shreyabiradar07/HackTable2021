@@ -37,8 +37,10 @@ section {
 }
 
 section.home {
+  overflow: hidden ;
   flex-direction: row;
-  margin-top: 0;
+  margin: 0;
+  height: 100%;
 }
 section .center-h1{
   text-align: center;
