@@ -40,6 +40,9 @@ section.home {
   flex-direction: row;
   margin-top: 0;
 }
+section .center-h1{
+  text-align: center;
+}
 
 /* BUTTON */
 .btn {
@@ -174,6 +177,7 @@ section.home {
 
 .services .service {
   padding: 30px;
+  background-color: rgba(176, 196, 222,0.5);
 }
 
 .services .service:hover {
