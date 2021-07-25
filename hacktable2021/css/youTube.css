@@ -1,0 +1,39 @@
+.iframe-container{
+    position: relative;
+    margin-left: auto;
+    width: 90%;
+    padding-bottom: 56.25%; 
+    height: 0;
+  }
+  .iframe-container iframe{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 90%;
+    height: 70%;
+  }
+
+  @media (max-width: 768px) {
+    .iframe-container{
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; 
+        height: 0;
+      }
+      .iframe-container iframe{
+        position: absolute;
+        top:-4em;
+        left: 0.5%;
+        width: 99%;
+        height: 90%;
+      }
+  }
+
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .scrollbar-hidden {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }

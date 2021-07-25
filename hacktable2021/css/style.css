@@ -40,6 +40,9 @@ section.home {
   flex-direction: row;
   margin-top: 0;
 }
+section .center-h1{
+  text-align: center;
+}
 
 /* BUTTON */
 .btn {
@@ -172,22 +175,23 @@ section.home {
   text-align: center;
 }
 
-.services .service {
+.services > * {
   padding: 30px;
+  background-color: rgba(176, 196, 222,0.5);
 }
 
-.services .service:hover {
+.services >*:hover {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.services .service h2 {
+.services >* h2 {
   font-size: 24px;
   font-weight: 500;
   margin-top: 20px;
   color: var(--secondary-color);
 }
 
-.services .service .icon img {
+.services >* .icon img {
   max-width: 250px;
 }
 
