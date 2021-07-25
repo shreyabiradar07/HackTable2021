@@ -1,4 +1,4 @@
-let username="";
+let username=null;
 let db,msgRef;
       
 var msgScreen = document.getElementById("messages"); //the <ul> that displays all the <li> msgs
@@ -25,13 +25,24 @@ function init(){
        msgRef = db.ref("/y1"); 
     //    if(msgForm)
         msgForm.addEventListener('submit', sendMessage);
-      username = prompt("Please enter your name");
+        
       loadChat()
 
 } 
+function getName(){
+    if(localStorage.getItem("username")==null){
+        // username = prompt("Please enter your name");
+        localStorage.setItem("username","Anonymous user"+Math.random());
+    }
+    else username  = localStorage.getItem("username")
+    return username
+}
 function sendMessage(e){
     // alert("hi")
     e.preventDefault();
+    if(username==null){
+        username = getName()
+    }
     const text =    msgInput.value;
   
       if(!text.trim()) return alert('Please type a message'); //no msg submitted
