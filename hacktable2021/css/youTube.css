@@ -23,8 +23,17 @@
       .iframe-container iframe{
         position: absolute;
         top:-4em;
-        left: 0;
-        width: 100%;
+        left: 0.5%;
+        width: 99%;
         height: 90%;
       }
+  }
+
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .scrollbar-hidden {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
