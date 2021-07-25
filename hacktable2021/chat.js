@@ -25,14 +25,16 @@ function init(){
        msgRef = db.ref("/y1"); 
     //    if(msgForm)
         msgForm.addEventListener('submit', sendMessage);
-        
+        if(username==null){
+            username = getName()
+        }
       loadChat()
 
 } 
 function getName(){
     if(localStorage.getItem("username")==null){
-        // username = prompt("Please enter your name");
-        localStorage.setItem("username","Anonymous user"+Math.random());
+        username = prompt("Please enter your name");
+        localStorage.setItem("username",username);
     }
     else username  = localStorage.getItem("username")
     return username
@@ -40,9 +42,7 @@ function getName(){
 function sendMessage(e){
     // alert("hi")
     e.preventDefault();
-    if(username==null){
-        username = getName()
-    }
+
     const text =    msgInput.value;
   
       if(!text.trim()) return alert('Please type a message'); //no msg submitted
