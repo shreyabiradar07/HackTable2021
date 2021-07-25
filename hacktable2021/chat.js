@@ -6,7 +6,7 @@ var msgForm = document.getElementById("messageForm"); //the input form
 var msgInput = document.getElementById("msg-input"); //the input element to write messages
 var msgBtn = document.getElementById("msg-btn"); //the Send button
 
-function init(){
+function init(page){
     // console.log(msgScreen)
     var firebaseConfig = {
         apiKey: "AIzaSyAXjnN7PBoNctwdxmS_ArhnDsCyTFtIFgU",
@@ -22,17 +22,19 @@ function init(){
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
        db = firebase.database();
-       msgRef = db.ref("/y1"); 
+       msgRef = db.ref("/"+page); 
     //    if(msgForm)
         msgForm.addEventListener('submit', sendMessage);
-        
+        if(username==null){
+            username = getName()
+        }
       loadChat()
 
 } 
 function getName(){
     if(localStorage.getItem("username")==null){
-        // username = prompt("Please enter your name");
-        localStorage.setItem("username","Anonymous user"+Math.random());
+        username = prompt("Please enter your name");
+        localStorage.setItem("username",username);
     }
     else username  = localStorage.getItem("username")
     return username
@@ -40,9 +42,7 @@ function getName(){
 function sendMessage(e){
     // alert("hi")
     e.preventDefault();
-    if(username==null){
-        username = getName()
-    }
+
     const text =    msgInput.value;
   
       if(!text.trim()) return alert('Please type a message'); //no msg submitted
